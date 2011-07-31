@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.herranzmartin</groupId>
+	<artifactId>actividades-web</artifactId>
+	<packaging>war</packaging>
+	<version>1.1</version>
+	<name>actividades-web Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<production.war.name>actividades</production.war.name>
+		<test.war.name>actividades</test.war.name>
+		<local.war.name>actividades_v002</local.war.name>
+		<local_remote.war.name>actividadesRemote</local_remote.war.name>
+
+	</properties>
+
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jcommon</artifactId>
+			<version>1.0.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.13</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.herranzmartin</groupId>
+			<artifactId>actividadesBusiness</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<!-- Gson: Java to Json conversion -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.4</version>
+			<scope>compile</scope>
+		</dependency>
+
+
+
+
+
+	</dependencies>
+
+
+
+	<build>
+		<finalName>actividades-web</finalName>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources/local</directory>
+			</resource>
+		</resources>
+
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<!-- <containerConfigXML>src/main/resources/local/context.xml</containerConfigXML> 
+						<webXml>src/main/resources/local/web.xml</webXml> -->
+					<archiveClasses>false</archiveClasses>
+					<warName>${local.war.name}</warName>
+
+					<!-- aquí está la ciencia para que se incorpore el fichero persistence.xml 
+						donde toca -->
+					<webResources>
+						<resource>
+							<directory>src/main/resources/local</directory>
+							<!-- override the destination directory for this resource -->
+							<targetPath>WEB-INF/classes/META-INF</targetPath>
+							<includes>
+								<include>persistence.xml</include>
+							</includes>
+						</resource>
+					</webResources>
+
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<url>http://localhost:8080/manager</url>
+					<server>Tomcat_5528_Mac</server>
+					<warFile>target/${local.war.name}.war</warFile>
+					<path>/${local.war.name}</path>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Este fichero está en src.main.resources.local -->
+<!-- docBase="aaeeModPlanasS20090807" -->
+
+<Context 
+	path="/actividades" 
+	 
+	debug="5" 
+	reloadable="true" 
+	crossContext="true"
+	antiJARLocking="true" 
+	antiResourceLocking="true"
+	>
+	<!-- 
+	Si aplicamos ésto nos lo ejecuta en un virtual host.
+	antiJARLocking="true" 
+	antiResourceLocking="true"
+	--> 
+	<Resource 
+		description="Local Database" 
+		auth="Container" 
+		name="jdbc/Database" 
+		type="javax.sql.DataSource" 
+		username="root" 
+		password="" 
+		maxActive="10" 
+		maxIdle="5" 
+		maxWait="-1"
+		removeAbandoned="true"
+		removeAbandonedTimeout="120"
+		driverClassName="com.mysql.jdbc.Driver" 
+		url="jdbc:mysql://localhost:3306/database?autoReconnect=true" />
+
+
+</Context>
+<!-- 
+	maxActive="100"
+	maxIdle="30"
+	maxWait="10000"
+
+ -->

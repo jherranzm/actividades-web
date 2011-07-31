@@ -1,0 +1,59 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+
+
+	<!-- Categorias -->
+	<servlet>
+		<servlet-name>CategoriasServlet</servlet-name>
+		<display-name>CategoriasServlet</display-name>
+		<description></description>
+		<servlet-class>net.herranzmartin.actividades.servlets.CategoriasServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<!-- Acciones -->
+	<servlet>
+		<servlet-name>AccionesServlet</servlet-name>
+		<display-name>AccionesServlet</display-name>
+		<description></description>
+		<servlet-class>net.herranzmartin.actividades.servlets.AccionesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Actividades -->
+	<servlet>
+		<servlet-name>ActividadesServlet</servlet-name>
+		<display-name>ActividadesServlet</display-name>
+		<description></description>
+		<servlet-class>net.herranzmartin.actividades.servlets.ActividadesServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>CategoriasServlet</servlet-name>
+		<url-pattern>/categorias</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AccionesServlet</servlet-name>
+		<url-pattern>/acciones</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ActividadesServlet</servlet-name>
+		<url-pattern>/actividades</url-pattern>
+	</servlet-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>

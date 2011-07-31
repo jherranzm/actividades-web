@@ -1,0 +1,226 @@
+﻿/*
+ * body
+ * 	#all_content
+ *  #logo
+ *  #contanier-1
+ *  	#lesPestanyes
+ *  	#lesPestanyesContainer
+ *  		#fragment-1
+ *  			#fragment-1a
+ *  				#portada
+ *  		#fragment-2
+ *  			#fragment-2a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-3
+ *  			#fragment-3a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  					#valItems
+ *  		#fragment-4
+ *  			#fragment-4a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-5
+ *  			#fragment-5a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  					.serviciosTabs
+ *  					#serviciosContainer
+ *  		#fragment-6
+ *  			#fragment-6a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-7
+ *  			#fragment-7a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  #cita
+ *  #datosContacto
+ *  
+ * 
+ * */
+
+
+*{
+}
+
+
+body{
+	background-color: #EEEEEE; /* Es un lila clarito ;#d8d3ff;*/
+}
+
+br { 
+}
+
+#all_content{
+	background-color:#FFF;
+}
+
+
+#Logo_T2{
+	background-color:#FFF;
+}
+
+
+
+#datosContacto {
+}
+
+p.datosContacto {
+	color: #000099;
+}
+
+
+h1{
+	color: #cc6600;
+}
+
+a{
+}
+
+a.mail{
+	color: #000099;
+}
+
+ul.T2{
+}
+
+.T2{
+	color: #000000;
+}
+
+li.T2{
+	color: #000000;
+}
+
+li.T2_servicios{
+	color: #000000;
+}
+
+p {
+	color:#000;
+}
+
+.imagenIzquierda{
+}
+
+.contenido{
+}
+
+p.cita {
+	color: #666666;
+	background-color:#FFF;
+}
+
+.serviciosIzq{
+}
+
+.serviciosDer{
+}
+
+.izquierda{
+}
+
+ul.sinIndent{
+}
+
+div#portada{
+	background: url(img/espiral_005.png) no-repeat;
+	color: #800080; /* lila */
+}
+
+p.lila{
+	color: #330066; /* lila */
+}
+
+.titulo{
+}
+
+.autor{
+}
+
+div.valores_top{
+}
+
+div.valores_top a{
+	background: #1759ff;
+	color: #FFFFFF;
+}
+
+div.valores_top a:hover{
+	background: #3366CC;
+	color: #FFFFFF;
+}
+
+div.valores_top a.current{
+	background: #66ccff;
+	color: #000000;
+}
+
+div.divleft{
+}
+
+div.valItems{
+}
+
+div.valDesc{
+	background:#ffe030;
+}
+
+div.valDesc p{
+}
+
+
+/* tabs */
+ul.tabs {  
+	background-color: #ffffff;
+}
+
+ul.tabs li { 
+}
+
+/* every tab uses the same background image */
+ul.tabs li a { 
+	background-color: #ffffff;
+}
+
+/* adjust the background image position on each tab */
+ul.tabs li a		{background-color: #cc6600; color: #fff;}
+ul.tabs li a:hover 	{ background-color: #ff9933; color:#FFFFFF; }
+ul.tabs li a.current 	{ background-color: #FFFFFF; color:#cc6600; }
+
+/* panes */
+.panes {
+	background-color: #FFF;
+}
+
+/* serviciosTabs */
+ul.serviciosTabs {  
+	background-color: #ffffff;
+}
+
+ul.serviciosTabs li { 
+}
+
+/* every tab uses the same background image */
+ul.serviciosTabs li a { 
+	background-color: #66ccff;
+}
+
+/* adjust the background image position on each tab */
+ul.serviciosTabs li a		{background-color: #003399; color: #fff;}
+
+ul.serviciosTabs li a:hover 	{ background-color: #3366CC; color:#FFFFFF; }
+
+ul.serviciosTabs li a.current 	{ background-color: #b7ecff; color:#003399; }
+
+/* panes */
+.serviciosPanes {
+	background-color: #b7ecff;
+}
+
+div.fondoPanes{
+	background-color: #b7ecff;
+}
+

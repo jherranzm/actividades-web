@@ -1,0 +1,362 @@
+/*
+ * body
+ * 	#all_content
+ *  #logo
+ *  #contanier-1
+ *  	#lesPestanyes
+ *  	#lesPestanyesContainer
+ *  		#fragment-1
+ *  			#fragment-1a
+ *  				#portada
+ *  		#fragment-2
+ *  			#fragment-2a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-3
+ *  			#fragment-3a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  					#valItems
+ *  		#fragment-4
+ *  			#fragment-4a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-5
+ *  			#fragment-5a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  					.serviciosTabs
+ *  					#serviciosContainer
+ *  		#fragment-6
+ *  			#fragment-6a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  		#fragment-7
+ *  			#fragment-7a
+ *  				.imagenIzquierda
+ *  				.contenido
+ *  #cita
+ *  #datosContacto
+ *  
+ * 
+ * */
+
+
+*{
+	font-family: Catalyst, Tahoma, Verdana, Geneva, Arial, sans-serif;
+	font-size: 12px;
+	border: 0px;
+	outline:none;		
+}
+
+
+body{
+	margin: 5px auto 5px auto;
+	width:780px;
+}
+
+br { 
+	clear: both;
+}
+
+div#all_content{
+	margin: 0 auto;
+	width:780px;
+}
+
+
+div#Logo_B2{
+	float: left;
+	width:780px;
+}
+
+
+
+#datosContacto {
+	font-family: "Comic Sans MS", Verdana, Geneva, Arial, sans-serif;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	width:780px;
+	visibility: visible;
+	display: block;
+	height:30px;
+	vertical-align: text-bottom;  /* No aplica para un div, si para un elemento como p */
+}
+
+p.datosContacto {
+	font-family: "Comic Sans MS", Verdana, Geneva, Arial, sans-serif;
+	text-align: center;
+	margin-left:auto;
+	margin-right:auto;
+	width:780px;
+	visibility: visible;
+	display: block;
+	height:30px;
+	vertical-align: text-bottom;  /* No aplica para un div, si para un elemento como p */
+}
+
+em{ font-weight: bold;}
+
+h1{
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+
+a{
+	border: 0;
+}
+
+a.mail{
+}
+
+ul.B2{
+	position: relative;
+	margin:0; 
+	padding:0; 
+}
+
+.B2{
+	text-align: justify;
+	padding: 5px;
+	margin: 0px 20px 0px 0px; 
+}
+
+li.B2{
+	text-align: justify;
+	margin: 0px 20px 0px 0px;
+	padding: 5px;
+}
+
+li.B2_servicios{
+	text-align: justify;
+}
+
+p {
+}
+
+
+
+.imagenIzquierda{
+	width: 280px;
+	float:left;
+	text-align: center;
+	display: block;
+	padding-top:30px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.contenido{
+	text-align: center;
+	vertical-align: middle;
+	width: 500px;
+	float: right;
+	display: block;
+}
+
+p.cita {
+	font-size: 12px;
+	font-family: "Comic Sans MS", Verdana, Geneva, Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px auto 0px auto;
+	padding: 10px;
+	width:760px; /* padding-left + width + padding-right = WidthTotal en FF */
+	visibility: visible;
+	display: block;
+	vertical-align: bottom;
+	float: left;
+	height: 35px;
+}
+
+.serviciosIzq{
+	text-align: left;
+	vertical-align: middle;
+	width: 225px;
+	float: left;
+	display: block;
+}
+.serviciosDer{
+	text-align: left;
+	vertical-align: middle;
+	width: 225px;
+	float: right;
+	display: block;
+}
+
+.izquierda{
+	text-align: justify;
+}
+
+ul.sinIndent{
+	list-style-type: disc;
+	margin-left:1px;
+}
+
+div#portada{
+	width: 480px;
+	margin: 30px auto 10px auto;
+	padding: 20px;
+}
+
+p.lila{
+}
+
+.titulo{
+	font-size: 12px;
+	font-weight: bold;
+}
+.autor{
+	font-style: italic;
+}
+
+div.valores_top{
+	display: block;
+	float: left;
+	font-size: 11px;
+	height: 50px !important;
+	margin: 2px;
+	padding: 10px 2px 10px 2px;
+	width: 110px;
+}
+
+
+div.valores_top a:hover{
+}
+
+div.valores_top a.current{
+}
+
+div.divleft{
+	clear: both;
+}
+
+div.valItems{
+	display: table-cell;
+    vertical-align: middle;
+	float: left;
+	width: 240px;
+}
+div.valDesc{
+	float: left;
+	width: 240px;
+	height: 145px !important;
+	vertical-align: middle;
+	/*padding-top: 20px;*/
+	display: table-cell;
+    vertical-align: middle;
+	
+}
+div.valDesc p{
+	margin: auto 10px auto 10px;
+}
+
+
+
+
+
+/* tabs */
+ul.tabs {  
+	margin:0 !important; 
+	padding:0;
+	width:780px; /* igual de ancho que el elemento body */
+	height:25px !important;
+}
+
+ul.tabs li { 
+	float:left; 
+	margin:0; 
+	padding:0; 
+	list-style-type:none;
+	height:25px !important;
+}
+
+/* every tab uses the same background image */
+ul.tabs li a { 
+	display:block;
+	overflow: hidden; 
+	text-align: center;
+	text-decoration: none;
+	width: 111px; /* 780px / 7 pesta–as */
+	padding:0px;
+	margin:0px; 
+	height:25px !important;
+	line-height: 30px;
+	border: none;
+	outline:none;		
+}
+
+/* adjust the background image position on each tab */
+ul.tabs li a		{}
+ul.tabs li a:hover 	{  }
+ul.tabs li a.current 	{ font-weight: bold; }
+
+/* panes */
+.panes {
+	width:780px;
+	min-height:390px;
+	max-height:390px;
+	height:390px;
+	padding-top: 15px;
+}
+
+/* serviciosTabs */
+ul.serviciosTabs {  
+	margin:0 !important; 
+	padding:0;
+	width:460px; /* igual de ancho que el elemento body */
+	height:25px !important;
+}
+
+ul.serviciosTabs li { 
+	float:left; 
+	margin:1px; 
+	padding:0px; 
+	list-style-type:none;
+	height:25px !important;
+}
+
+/* every tab uses the same background image */
+ul.serviciosTabs li a { 
+	display:block;
+	overflow: hidden; 
+	text-align: center;
+	text-decoration: none;
+	width: 100px; 
+	padding:0px;
+	margin: 0px; 
+	height:25px !important;
+	line-height: 30px;
+	border: none;
+	outline:none;		
+}
+
+/* adjust the background image position on each tab */
+ul.serviciosTabs li a		{}
+ul.serviciosTabs li a:hover 	{  }
+ul.serviciosTabs li a.current 	{ font-weight: bold;}
+
+/* panes */
+.serviciosPanes {
+	width:450px;
+	height:245px;	
+	padding: 5px 20px 5px 20px;
+}
+
+div.fondoPanes{
+	font-size: 10px;
+}
+
+#GraficoMetodologia{ margin:10px;}
+
+.fondo_azul{
+}
+
+.fondo_azul_resto{
+}
+
+
+
