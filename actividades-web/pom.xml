@@ -146,8 +146,7 @@
 					<archiveClasses>false</archiveClasses>
 					<warName>${local.war.name}</warName>
 
-					<!-- aquí está la ciencia para que se incorpore el fichero persistence.xml 
-						donde toca -->
+					<!-- aquí está la ciencia para que se incorpore el fichero persistence.xml donde toca -->
 					<webResources>
 						<resource>
 							<directory>src/main/resources/local</directory>

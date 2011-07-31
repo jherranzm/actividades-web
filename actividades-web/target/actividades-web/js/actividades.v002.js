@@ -35,7 +35,16 @@ var PANELES_CATEGORIAS = {};
 		PANELES_CATEGORIAS.LISTA.hide(); 
 		
 	};
+	
+var MENSAJES = {};
 
+	MENSAJES.OP_CATEGORIA_ADD_CONFIRM = "¿Confirma que desea guardar la categoría?";
+	MENSAJES.OP_CATEGORIA_NOMBRECORTO_ERROR = "Se requiere un nombre para la categoría.";
+	MENSAJES.OP_CATEGORIA_DESCRIPCIONCORTA_ERROR = "La descripción de la categoría es demasiado corta.";
+
+	MENSAJES.OP_ACCION_ADD_CONFIRM = "¿Confirma que desea guardar la acción?";
+	MENSAJES.OP_ACCION_NOMBRECORTO_ERROR = "Se requiere un nombre para la acción.";
+	MENSAJES.OP_ACCION_DESCRIPCIONCORTA_ERROR = "La descripción de la acción es demasiado corta.";
 	
 
 $(document).ready(function(){ 
@@ -195,27 +204,41 @@ $(document).ready(function(){
 	function bajaActividad(){
 	
 		console.log("INI function bajaActividad!");
-	
-	    $.ajax({  
-	    	
-			type: 		"POST",  
+		
+		if(confirm("¿Confirma la baja de la actividad?")){
 			
-			url: 		$(this).attr('href'), 
+			console.log("BAJA confirmada!");
 			
-			dataType: 	'json',
-			
-			beforeSend: function(){},
-			
-			error: function(XMLHttpRequest, textStatus, errorThrown){
-				alert("ERROR:" + textStatus + "\n" + errorThrown);
-			},
-			success: function(datosJSON){
-				PANELES_ACTIVIDADES.ocultarTodos();
-
-				alert(datosJSON.descRespuesta);
+		    $.ajax({  
+		    	
+				type: 		"POST",  
 				
-			}
-		});
+				url: 		$(this).attr('href'), 
+				
+				dataType: 	'json',
+				
+				beforeSend: function(){
+					console.log("antes de ejecutar la baja...");
+				},
+				
+				error: function(XMLHttpRequest, textStatus, errorThrown){
+					console.log("error!");
+					alert("ERROR:" + textStatus + "\n" + errorThrown);
+				},
+				success: function(datosJSON){
+					
+					console.log("success!");
+					PANELES_ACTIVIDADES.ocultarTodos();
+
+					alert(datosJSON.descRespuesta);
+					console.log(datosJSON.descRespuesta);
+					
+				}
+			});
+		}else{
+			console.log("BAJA desestimada!");
+		}
+	
 	    console.log("FIN function bajaActividad!");
 	
 	    return false;
@@ -501,14 +524,14 @@ $(document).ready(function(){
 		var desc = $("#accionDescripcion").val();
 		
 		if(nombre == "") {
-			alert("Se requiere un nombre para la acción.");
+			alert(MENSAJES.OP_ACCION_NOMBRECORTO_ERROR);
 			formularioValido = false;
 		}else if(desc == "" || desc.length < 5){
-			alert("La descripción de la acción es demasiado corta.");
+			alert(MENSAJES.OP_ACCION_DESCRIPCIONCORTA_ERROR);
 			formularioValido = false;
 		}
 		
-		if(formularioValido && confirm("¿Confirma que desea guardar la acción?")){
+		if(formularioValido && confirm(MENSAJES.OP_ACCION_ADD_CONFIRM)){
 			// se serializan los datos
 			var str = frm.serialize();
 			AJAX_Alta_Accion(str, frm);
@@ -529,14 +552,14 @@ $(document).ready(function(){
 		var desc = $("#categoriaDescripcion").val();
 		
 		if(nombre == "") {
-			alert("Se requiere un nombre para la categoria.");
+			alert(MENSAJES.OP_CATEGORIA_NOMBRECORTO_ERROR);
 			formularioValido = false;
 		}else if(desc == "" || desc.length < 5){
-			alert("La descripción de la categoria es demasiado corta.");
+			alert(MENSAJES.OP_CATEGORIA_DESCRIPCIONCORTA_ERROR);
 			formularioValido = false;
 		}
 		
-		if(formularioValido && confirm("¿Confirma que desea guardar la categoria?")){
+		if(formularioValido && confirm(MENSAJES.OP_CATEGORIA_ADD_CONFIRM)){
 			// se serializan los datos
 			var str = frm.serialize();
 			AJAX_Alta_Categoria(str, frm);
